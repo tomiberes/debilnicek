@@ -1,0 +1,25 @@
+.menu-side {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  overflow: auto;
+  background-color: @menu-side-color;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+.menu-side-left {
+  left: -(@menu-side-width);
+  width: 0;
+}
+
+.menu-side-left-open {
+  width: @menu-side-width;
+  // force GPU acceleration when showing
+  transform: translate3d(@menu-side-width, 0px, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-transform: translate3d(@menu-side-width, 0px, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}

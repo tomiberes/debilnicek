@@ -1,0 +1,145 @@
+// Animations
+// --------------------------------------------------
+
+// Move from/to
+// --------------------------------------------------
+.animation-page-moveToLeft {
+  -webkit-animation: moveToLeft .3s ease both;
+  animation: moveToLeft .3s ease both;
+}
+
+.animation-page-moveFromLeft {
+  -webkit-animation: moveFromLeft .3s ease both;
+  animation: moveFromLeft .3s ease both;
+}
+
+.animation-page-moveToRight {
+  -webkit-animation: moveToRight .3s ease both;
+  animation: moveToRight .3s ease both;
+}
+
+.animation-page-moveFromRight {
+  -webkit-animation: moveFromRight .3s ease both;
+  animation: moveFromRight .3s ease both;
+}
+
+.animation-page-moveToTop {
+  -webkit-animation: moveToTop .3s ease both;
+  animation: moveToTop .3s ease both;
+}
+
+.animation-page-moveFromTop {
+  -webkit-animation: moveFromTop .3s ease both;
+  animation: moveFromTop .3s ease both;
+}
+
+.animation-page-moveToBottom {
+  -webkit-animation: moveToBottom .3s ease both;
+  animation: moveToBottom .3s ease both;
+}
+
+.animation-page-moveFromBottom {
+  -webkit-animation: moveFromBottom .3s ease both;
+  animation: moveFromBottom .3s ease both;
+}
+
+// Fade TODO:
+// --------------------------------------------------
+.animation-fadeIn {
+  -webkit-animation: fadeIn .3s ease both;
+  animation: fadeIn .3s ease both;
+}
+
+.animation-fadeOut {
+  -webkit-animation: fadeIn .3s ease both;
+  animation: fadeIn .3s ease both;
+}
+
+// Animation keyframes
+// --------------------------------------------------
+
+// Move from/to keyframes
+// --------------------------------------------------
+@-webkit-keyframes moveToLeft {
+  from { }
+  to { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveToLeft {
+  from { }
+  to { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveToRight {
+  from { }
+  to { -webkit-transform: translateX(100%); }
+}
+@keyframes moveToRight {
+  from { }
+  to { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveToTop {
+  from { }
+  to { -webkit-transform: translateY(-100%); }
+}
+@keyframes moveToTop {
+  from { }
+  to { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveFromTop {
+  from { -webkit-transform: translateY(-100%); }
+}
+@keyframes moveFromTop {
+  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToBottom {
+  from { }
+  to { -webkit-transform: translateY(100%); }
+}
+@keyframes moveToBottom {
+  from { }
+  to { -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+
+@-webkit-keyframes moveFromBottom {
+  from { -webkit-transform: translateY(100%); }
+}
+@keyframes moveFromBottom {
+  from { -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+
+// Fade keyframes TODO:
+// --------------------------------------------------
+@-webkit-keyframes fadeIn {
+  from { }
+  to { opacity: 0.3; }
+}
+@keyframes fadeIn {
+  from { }
+  to { opacity: 0.3; }
+}
+
+@-webkit-keyframes fadeOut {
+  from { }
+  to { opacity: 0.3; }
+}
+@keyframes fadeOut {
+  from { }
+  to { opacity: 0.3; }
+}

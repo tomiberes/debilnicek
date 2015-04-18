@@ -1,0 +1,40 @@
+{
+  "name": "debilnicek",
+  "version": "0.0.2",
+  "private": "true",
+  "dependencies": {
+    "jquery": "",
+    "underscore": "",
+    "backbone": "",
+    "batoh": ""
+  },
+  "devDependencies": {
+    "vinyl-source-stream": "",
+    "gulp": "",
+    "gulp-jshint": "",
+    "gulp-rename": "",
+    "gulp-uglify": "",
+    "gulp-less": "",
+    "gulp-manifest": "",
+    "gulp-server-livereload": "",
+    "browserify": "",
+    "browserify-shim": "",
+    "handlebars": "",
+    "hbsfy": "",
+    "mocha": "",
+    "chai": ""
+  },
+  "browser": {
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "./client/lib/squire.js": "Squire"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

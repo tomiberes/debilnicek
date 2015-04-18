@@ -1,0 +1,78 @@
+.header {
+  position: relative;
+  color: @color-text-icons;
+
+  #search-create-form {
+    display: inline-block;
+
+    input[type="text"] {
+      // width: 140px;
+      width: 230px;
+      // -webkit-transition: all 0.7s ease 0s;
+      // -moz-transition: all 0.7s ease 0s;
+      // -o-transition: all 0.7s ease 0s;
+      // transition: all 0.7s ease 0s;
+    }
+
+    input[type="text"]:focus {
+      // width: 240px;
+    }
+  }
+
+  #search-create-input {
+    margin-left: 10px;
+    margin-top: 14px;
+    border-style: none;
+    border-bottom: 1.5px solid @color-accent;
+    background-color: @header-color;
+    color: #ffffff;
+    padding-bottom: 3px;
+    outline-width: 0;
+  }
+
+  #header-actions {
+    position: relative;
+    display: inline-block;
+    margin: 14px 0 0 0;
+    padding: 0;
+    clear: both;
+    float: right;
+    right: 10px;
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+
+    #header-message {
+      position: relative;
+      bottom: 6px;
+      margin: 0 15px 0 0;
+      color: @color-accent;
+    }
+
+    .message-fade {
+      animation: header-message-fade 0.5s 1;
+    -webkit-animation: header-message-fade 0.5s 1;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
+      animation-delay: .5s;
+      -webkit-animation-delay: .5s;
+    }
+
+    #header-action-more {
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes header-message-fade {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@-webkit-keyframes header-message-fade {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
