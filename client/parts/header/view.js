@@ -3,7 +3,7 @@
 var _ = require('underscore'),
     HeaderBone = require('../../bones').Header,
     Mediator = require('../../bones').Mediator,
-    Screen = require('../../util/screen'),
+    Browser = require('../../util/browser'),
     MenuOverflowView = require('../menu_overflow/view');
 
 var HeaderView = module.exports = HeaderBone.extend({
@@ -29,12 +29,12 @@ var HeaderView = module.exports = HeaderBone.extend({
     this.$el.append(this.menuOverflowView.$el);
     this.$searchCreateInput = this.$el.find('#search-create-input');
     this.$message = this.$el.find('#header-message').children().eq(0);
-    this.mediaQuery();
+    this.detectBrowser();
     return this;
   },
 
-  mediaQuery: function() {
-    if (Screen.mediaQuery() < 3) {
+  detectBrowser: function() {
+    if (Browser.isMobile || Browser.isAndroid) {
       this.$searchCreateInput.on('focus', function($ev) {
         Mediator.trigger('bone:menu:side:show');
         Mediator.trigger('bone:mask:on');

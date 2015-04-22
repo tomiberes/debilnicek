@@ -28,6 +28,7 @@ var conf = {
     browserify: {
       debug: debug
     },
+    manifest: 'debilnicek.manifest',
   },
   server: {
   },
@@ -62,7 +63,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('copy', function() {
-  return gulp.src(conf.client.SRC + 'index.html')
+  return gulp.src([conf.client.SRC + 'index.html', conf.client.SRC + '.htaccess'])
     .pipe(gulp.dest(conf.client.DEST));
 });
 
@@ -80,8 +81,8 @@ gulp.task('manifest', ['uglified', 'less', 'copy', 'assets'], function() {
       hash: true,
       preferOnline: true,
       network: ['http://*', 'https://*', '*'],
-      filename: 'app.manifest',
-      exclude: 'app.manifest'
+      filename: conf.client.manifest,
+      exclude: conf.client.manifest
     }))
     .pipe(gulp.dest(conf.client.DEST));
 });

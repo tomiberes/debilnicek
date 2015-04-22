@@ -5,7 +5,7 @@ var $ = require('jquery'),
     Mediator = require('../../bones').Mediator,
     MenuSideBone = require('../../bones').MenuSide,
     NoteThumbView = require('../note_thumb/view'),
-    Screen = require('../../util/screen');
+    Browser = require('../../util/browser');
 
 var NoteListView = module.exports = MenuSideBone.extend({
 
@@ -30,12 +30,12 @@ var NoteListView = module.exports = MenuSideBone.extend({
     this.$el.html(this.template);
     this.$el.addClass('menu-side-left');
     this.$thumbList = this.$el.find('.note-thumb-list');
-    this.mediaQuery();
+    this.detectBrowser();
     return this;
   },
 
-  mediaQuery: function(type) {
-    if (Screen.mediaQuery() < 3) {
+  detectBrowser: function(type) {
+    if (Browser.isMobile || Browser.isAndroid) {
       this.hide();
       Mediator.on('bone:mask:off', function() {
         this.hide();

@@ -47,9 +47,7 @@ var Resize = module.exports = {
   },
 
   onChangeDesktop: function() {
-    var lazyResize = _.debounce(function() {
-      Resize.all();
-    }, 100);
+    var lazyResize = _.debounce(Resize.all, 100);
     $(window).on('resize', lazyResize);
     return Resize;
   },
@@ -57,7 +55,9 @@ var Resize = module.exports = {
   onChangeMobile: function() {
     // Keyboard shown, reduce overall browser height
     $(window).on('resize', function($ev) {
-      Resize.$menu.height(Resize.$win.height() - Resize.$header.height());
+      // resize only content and expect users to hide the keyboard when they
+      // want to see the whole list of notes from sidebar on mobile
+      // Resize.$menu.height(Resize.$win.height() - Resize.$header.height());
       Resize.$content.height(Resize.$win.height() - Resize.$header.height());
     });
     // Device rotated swap width & height

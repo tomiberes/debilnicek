@@ -9,7 +9,7 @@ var _ = require('underscore'),
     NoteView = require('../note/view'),
     Sync = require('../../sync'),
     Logger = require('../../util/logger'),
-    Screen = require('../../util/screen'),
+    Browser = require('../../util/browser'),
     Resize = require('../../util/resize'),
     Note = require('../../models/note'),
     Notes = require('../../collections/notes');
@@ -36,13 +36,13 @@ var SkeletonView = module.exports = Skeleton.extend({
     this.header(new HeaderView());
     this.menu(new NoteThumbListView());
     this.pages.show(new NoteView());
-    this.mediaQuery();
+    this.detectBrowser();
     return this;
   },
 
-  mediaQuery: function() {
+  detectBrowser: function() {
     Resize.init().onLoad();
-    if (Screen.mediaQuery() < 3) {
+    if (Browser.isMobile || Browser.isAndroid) {
       Resize.onChangeMobile();
     } else {
       Resize.onChangeDesktop();

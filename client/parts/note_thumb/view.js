@@ -3,7 +3,7 @@
 var $ = require('jquery'),
     Bone = require('../../bones').Bone,
     Mediator = require('../../bones').Mediator,
-    Screen = require('../../util/screen');
+    Browser = require('../../util/browser');
 
 var NoteThumbView = module.exports = Bone.extend({
 
@@ -33,12 +33,12 @@ var NoteThumbView = module.exports = Bone.extend({
   render: function(options) {
     Bone.prototype.initialize.apply(this, arguments);
     this.$el.html(this.template(this.model.toJSON()));
-    this.mediaQuery();
+    this.detectBrowser();
     return this;
   },
 
-  mediaQuery: function(type) {
-    if (Screen.mediaQuery() < 3) {
+  detectBrowser: function(type) {
+    if (Browser.isMobile || Browser.isAndroid) {
       this.selectedClass = 'selected-masked';
       this.$el.on('click', function($ev) {
         Mediator.trigger('bone:menu:side:hide');
